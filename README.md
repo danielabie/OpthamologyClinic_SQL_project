@@ -1,21 +1,61 @@
 # Ophthalmology Clinic Patient Analysis using SQL
 **
-Project Overview
-This project simulates a real-world ophthalmology clinic database using SQL Server. The dataset includes patient demographics, PHN numbers, assigned ophthalmologists, eye conditions, appointment schedules, and visit types.
-The project was inspired by real clinic workflows in a Canadian ophthalmology practice.
+This project simulates a real-world ophthalmology clinic database using SQL Server and a star schema design approach. The database was designed to reflect realistic healthcare workflows commonly used in Canadian ophthalmology clinics, including patient management, appointment scheduling, procedure tracking, and appointment status monitoring.
 
+The project contains:
+
+- Dimension Tables
+  - Patients
+  - Procedures
+- Fact Table
+  - Appointments
+
+The dataset includes:
+- Patient demographics
+- PHN tracking
+- Appointment schedules
+- Ophthalmologists
+- Procedure categories
+- Appointment statuses
+- Eye clinic workflow simulations
+  
 Tools Used
-- SQL Server
+- Microsoft SQL Server
 - Azure Data Studio
 - GitHub
+- Power BI (for future dashboard integration)
 
-Database Features
-- Patient records management
-- Unique PHN tracking
-- Doctor assignment
-- Eye condition categorization
-- Appointment scheduling
-- Cataract surgery-related patient tracking
+- 
+Database Structure
+Dimension Tables
+1. Patients
+Stores patient demographic information:
+- PatientID
+- PHN
+- First Name
+- Last Name
+- Age
+- Gender
+- Location
+
+2. Procedures
+Stores ophthalmology procedure information:
+- ProcedureID
+- Procedure Name
+- Procedure Category
+- Procedure Type
+- Estimated Duration
+- Fact Table
+
+3. Appointments
+Stores appointment transaction records:
+- AppointmentID
+- PatientID
+- DoctorName
+- ReasonForVisit
+- AppointmentDate
+- AppointmentTime
+- AppointmentStatus
 
 SQL Skills Demonstrated
 - CREATE DATABASE
@@ -26,49 +66,72 @@ SQL Skills Demonstrated
 - GROUP BY
 - ORDER BY
 - COUNT aggregation
+- AVG aggregation
 - CASE statements
+- INNER JOIN
+- Fact and Dimension table modeling
+- Healthcare data analysis queries
 
 Analysis Performed
+Patient Analysis
+- Total number of patients
+- Female patient filtering
+- Senior vs Adult vs Pediatric patient segmentation
+- Average patient age
+- Oldest patient identification
+- Patient distribution by location
+    
+Appointment Analysis
+- Total appointments per doctor
+- Appointment status breakdown
+  - Arrived
+  - Cancelled
+  - No Show
+- Doctor with the highest No Show appointments
+- Full Eye Exam appointment tracking
+- Cancelled appointment analysis with patient details
 
-1. Total Patients
-Calculated the total number of clinic patients.
-
-3. Patients Per Doctor
-Analyzed doctor workload distribution across:
-- Dr. Lim
-- Dr. Tischler
-- Dr. Diep
-- Dr. Dena
-- Dr. Mallek
-  
-3. Most Common Eye Conditions
-Identified common ophthalmology conditions such as:
-- Cataract
-- Glaucoma
-- Macular Degeneration
-- Diabetic Retinopathy
-- Strabismus
-
-4. Cataract Surgery Analysis
-Tracked cataract-related consultations, surgery consultations, and post-operative visits.
-
-5. Patient Age Group Analysis
-Compared:
-- Senior patients
-- Adult patients
-- Pediatric patients
+Procedure Analysis
+- Routine consultations
+- Diagnostic examinations
+- Pre-surgical testing
+- Treatment procedures
+- Estimated procedure durations
 
 Key Insights
-- Cataract was the most common eye condition.
-- Senior citizens represented the majority of clinic patients.
-- Dr. Lim managed the highest patient volume.
-- Pediatric patients were mainly handled by Dr. Lim and Dr. Tischler.
+- Senior patients represented a large portion of clinic visits.
+- Follow-up and Full Eye Exam appointments were the most common visit types.
+- Appointment status tracking helped identify No Show and Cancelled appointment trends.
+- Procedure categorization supports future healthcare reporting and dashboard development.
+- The project demonstrates foundational healthcare analytics and database modeling skills.
 
-Screenshots
+Future Improvements
+- Integrate Power BI dashboard visualizations
+- Add doctor dimension table
+- Create billing and insurance tables
+- Add appointment duration analysis
+- Implement stored procedures and views
+- Build automated reporting queries
 
-- Patients Table Overview
-- Total Patients KPI
-- Patients by Doctor
-- Common Eye Conditions
-- Cataract Surgery Analysis
-- Patient Age Group Analysis
+
+Project Screenshots
+1. Patient Dimension Table
+Shows the creation and population of the Patients dimension table.
+
+2. Patient Analysis Queries
+SQL queries used for patient demographic and segmentation analysis.
+
+3. Appointment Fact Table
+Fact table containing appointment transactions and scheduling records.
+
+5. Appointment Analysis Queries
+SQL analysis queries for appointment trends, No Shows, and status breakdowns.
+
+7. Procedure Dimension Table
+Dimension table for ophthalmology procedures and procedure categorization.
+
+Author
+
+Daniela Monique Bie
+Management Information Systems Graduate
+Healthcare Administration & Data Analytics Enthusiast
