@@ -25,7 +25,6 @@ Tools Used
 - GitHub
 - Power BI (for future dashboard integration)
 
-- 
 Database Structure
 Dimension Tables
 1. Patients
